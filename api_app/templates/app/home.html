@@ -39,12 +39,6 @@ body{
      padding: 8px;
    }
 
-   .trhvr:hover{
-       background-color: #0e5edf;
-       color: white;
-       border: none;
-   }
-   
    
    .dropbtn {
        background-color: #0e5edf;
@@ -138,7 +132,9 @@ body{
    color: white;
  }
  
- 
+ .trhvr{
+   border-bottom: 2px solid black;
+ }
  
     </style>
 
@@ -171,10 +167,7 @@ body{
 
    <thead>
       <tr >
-         <th>Serial No</th>
-         <th>End-Points</th>
-         <th>Description</th>
-         <th>Methods</th>
+         <th>API Details</th>
       </tr>
   </thead>
 
@@ -182,80 +175,84 @@ body{
    <tbody>
       
          <tr class="trhvr">
-            <td>1</td>
-            <td>http://127.0.0.1:8000/authentication/api/registeration/</td>
+            
             <td>
-               from django.shortcuts import render
-               from django.views import View
-                           
-               from django.shortcuts import render
-               from django.views import View
-            </td>
-            <td>GET</td>
+               <strong>Get all data</strong> <br>
+               GET <mark>http://127.0.0.1:8000/authentication/api/registeration/</mark> <br> 
+               <strong>URL Parameters: None <br></strong>
+               <strong>Body Parameters: None</strong>
+               <strong><br>Details: <br></strong>
+               This endpoints/url will return list all companies data in paginated object. status will be 200<br>
+               It will contains  values of pagination to control next and previous buttons.
+               
+               Note: it will not take any url or body parameters.
+            
+           </td>
          </tr>
 
          <tr class="trhvr">
-            <td>1</td>
-            <td>http://127.0.0.1:8000/authentication/api/registeration/</td>
+            
             <td>
-               from django.shortcuts import render
-               from django.views import View
-                           
-               from django.shortcuts import render
-               from django.views import View
-            </td>
-            <td>GET</td>
+               <strong>Get signle data</strong> <br>
+               GET <mark>http://127.0.0.1:8000/authentication/api/registeration/</mark> <br> 
+               <strong>URL Parameters: None <br></strong>
+               <strong>Body Parameters: None</strong>
+               <strong><br>Details: <br></strong>
+               This endpoints/url will return list all companies data in paginated object. status will be 200<br>
+               It will contains  values of pagination to control next and previous buttons.
+               
+               Note: it will not take any url or body parameters.
+            
+           </td>
          </tr>
 
          <tr class="trhvr">
-            <td>2</td>
-            <td>http://127.0.0.1:8000/authentication/api/registeration/</td>
+            
             <td>
-               from django.shortcuts import render
-               from django.views import View
-                           
-               from django.shortcuts import render
-               from django.views import View
-            </td>
-            <td>GET</td>
+               <strong>POST/Insert data</strong> <br>
+               GET <mark>http://127.0.0.1:8000/authentication/api/registeration/</mark> <br> 
+               <strong>URL Parameters: None <br></strong>
+               <strong>Body Parameters: None</strong>
+               <strong><br>Details: <br></strong>
+               This endpoints/url will return list all companies data in paginated object. status will be 200<br>
+               It will contains  values of pagination to control next and previous buttons.
+               
+               Note: it will not take any url or body parameters.
+            
+           </td>
+         </tr>
+
+
+         <tr class="trhvr">
+            
+            <td>
+               <strong>Update data</strong> <br>
+               GET <mark>http://127.0.0.1:8000/authentication/api/registeration/</mark> <br> 
+               <strong>URL Parameters: None <br></strong>
+               <strong>Body Parameters: None</strong>
+               <strong><br>Details: <br></strong>
+               This endpoints/url will return list all companies data in paginated object. status will be 200<br>
+               It will contains  values of pagination to control next and previous buttons.
+               
+               Note: it will not take any url or body parameters.
+            
+           </td>
          </tr>
 
          <tr class="trhvr">
-            <td>3</td>
-            <td>http://127.0.0.1:8000/authentication/api/registeration/</td>
+            
             <td>
-               from django.shortcuts import render
-               from django.views import View
-                           
-               from django.shortcuts import render
-               from django.views import View
-            </td>
-            <td>GET</td>
-         </tr>
-         <tr class="trhvr">
-            <td>4</td>
-            <td>http://127.0.0.1:8000/authentication/api/registeration/</td>
-            <td>
-               from django.shortcuts import render
-               from django.views import View
-                           
-               from django.shortcuts import render
-               from django.views import View
-            </td>
-            <td>GET</td>
-         </tr>
-
-         <tr class="trhvr">
-            <td>5</td>
-            <td>http://127.0.0.1:8000/authentication/api/registeration/</td>
-            <td>
-               from django.shortcuts import render
-               from django.views import View
-                           
-               from django.shortcuts import render
-               from django.views import View
-            </td>
-            <td>GET</td>
+               <strong>Delete/Destroy data</strong> <br>
+               GET <mark>http://127.0.0.1:8000/authentication/api/registeration/</mark> <br> 
+               <strong>URL Parameters: None <br></strong>
+               <strong>Body Parameters: None</strong>
+               <strong><br>Details: <br></strong>
+               This endpoints/url will return list all companies data in paginated object. status will be 200<br>
+               It will contains  values of pagination to control next and previous buttons.
+               
+               Note: it will not take any url or body parameters.
+            
+           </td>
          </tr>
 
    </tbody>
