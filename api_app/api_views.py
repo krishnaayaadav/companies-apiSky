@@ -25,7 +25,7 @@ class CompanyAPI(APIView):
    
    def post(self, request, format=None):
       """post request to insert new data into our database"""
-      serializer = CompanySerializer(data=request.data)
+      serializer = CompanySerializer(data=request.data, context={'post': request.method})
       if serializer.is_valid():
          serializer.save()
          return Response(serializer.data, status=created)
@@ -61,8 +61,7 @@ class CompaniesAPI(APIView):
       except:
          return Response(status=not_found)
       else:
-         methods = request.method 
-         serializer = CompanySerializer(comp_data, data=request.data, partial=True, context={'patch': methods})
+         serializer = CompanySerializer(comp_data, data=request.data, partial=True, context={'patch': request.method, 'id': id})
          if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=ok_response)
@@ -76,7 +75,7 @@ class CompaniesAPI(APIView):
       except:
          return Response(status=not_found)
       else:
-         serializer = CompanySerializer(comp_data, data=request.data)
+         serializer = CompanySerializer(comp_data, data=request.data, context={'put': request.method, 'id': id})
          if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=ok_response)

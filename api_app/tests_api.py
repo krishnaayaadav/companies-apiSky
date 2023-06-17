@@ -18,7 +18,6 @@ import json,random
 class CompanyModelTest(TestCase):
    """Here we are testing model operation(without api) companies creation,updation,deletion and details-page"""
    
-   
    def setUp(self):
       # inilizing of new obj comp
       self.comp_type = Types.objects.create(name='Private')
@@ -45,7 +44,6 @@ class CompanyModelTest(TestCase):
             "comp_services": "df",
             "comp_desc": "lkdf"
       }
-      
   
    # creation test
    def test_comp_creation(self):
@@ -62,7 +60,6 @@ class CompanyModelTest(TestCase):
       
       # checking no of emp
       self.assertEqual(comp.comp_no_emp, self.data['comp_no_emp'])
-      
       
       print('\n obj created successfuly')
    
@@ -95,17 +92,9 @@ class CompanyModelTest(TestCase):
          comp = True
       else:
          comp = False
-      
         
    # checking weather obj does not exist     
       self.assertEqual(comp, True)
-      
-      
-      
-   
-      
-      
-      
       
    # def test_get_comp(self):
    #    all_cmp = Company.objects.all()

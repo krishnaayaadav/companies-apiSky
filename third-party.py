@@ -45,9 +45,22 @@ def data_insertion(file):
          print(r.json())
 
 
-   
+
+def post_emp_data(file):
+   # url = 'http://127.0.0.1:8000/api/company/'
+   url = 'http://127.0.0.1:8000/api/company/'
+
+
+   response = requests.post(headers='application/json')
+
+   print(response.json(), )
+
+
+
 file = 'companies_list.csv'   
-data_insertion(file)
+post_emp_data(file)
+
+# data_insertion(file)
 
 # data = {
 #    'comp_name': "tcs",
