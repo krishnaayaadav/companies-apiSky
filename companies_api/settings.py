@@ -117,19 +117,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# REST_FRAMEWORK = {
-#     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
-    
-#     'DEFAULT_THROTTLE_CLASSES': ('rest_framework.throttling.AnonRateThrottle',),
-    
-#     'DEFAULT_THROTTLE_RATES': {
-#         'anon': '100/day'
-#     },
-    
-#     "DEFAULT_PAGINATION_CLASS": 'rest_framework.pagination.PageNumberPagination',
-#      'PAGE_SIZE': 7
-# }
-
 
 
 REST_FRAMEWORK = {
@@ -149,7 +136,10 @@ REST_FRAMEWORK = {
     'DEFUALT_THROTTLE_RATES': {
         'anon': '1/day',
         'user': '100/day',
-    }
+    },
+     # pagination class
+     "DEFAULT_PAGINATION_CLASS": 'rest_framework.pagination.PageNumberPagination',
+     'PAGE_SIZE': 13
 
 }
 
