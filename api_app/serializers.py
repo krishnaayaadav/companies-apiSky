@@ -16,30 +16,60 @@ class CompanySerializer(serializers.Serializer):
    
    def validate(self, attrs):
       """Validating company type here """
-      typ = attrs.get('comp_type',None)
+      comp_type = attrs.get('comp_type',None)
+      comp_name = attrs.get('comp_name', None)
+
+
+
+      print(self.context)
       
-      if self.context['patch']:
-         if not typ:
-            return attrs
-         else:
-            try:
-               comp_typ = Types.objects.get(name=typ)
-            except:
-               raise serializers.ValidationError('Invalid Company type')
-            else:
-               attrs['comp_type'] = comp_typ
-               return attrs
+     
+      if 'post' in self.context:
+         if not comp_name:
+            raise serializers.ValidationError('Company name is required')
          
-      if not type:
-         raise serializers.ValidationError('Company type is required')
-      else:
          try:
-            comp_typ = Types.objects.get(name=typ)
+            Company.objects.get(comp_name  = comp_name)
+         except:
+            pass
+         else:
+            raise serializers.ValidationError('Company already register with this name')
+         
+           
+         if not comp_type:
+            raise serializers.ValidationError('Company type is required')
+      
+         
+      
+      # if request method is patch or put
+      else:
+         try: # finding existing companies having same name
+            comp = Company.objects.filter(comp_name=comp_name).exclude(id=self.context['id'])
+         except:
+            pass
+         else:
+            if comp:
+               raise serializers.ValidationError('Company is already registerd with this name')
+      
+      if comp_type:
+         try:
+            comp_typ = Types.objects.get(name=comp_type)
          except:
             raise serializers.ValidationError('Invalid Company type')
          else:
             attrs['comp_type'] = comp_typ
-            return attrs
+
+
+         
+
+       
+      
+      
+      return attrs
+       
+
+
+
             
    def create(self, validated_data):
       """Create method to allow insertion"""
