@@ -25,7 +25,7 @@ class CompanyAPI(APIView):
    
    def post(self, request, format=None):
       """post request to insert new data into our database"""
-      serializer = CompanySerializer(data=request.data)
+      serializer = CompanySerializer(data=request.data, context={'post': request.method})
       if serializer.is_valid():
          serializer.save()
          return Response(serializer.data, status=created)
