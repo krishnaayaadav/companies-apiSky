@@ -1,0 +1,13 @@
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'yadav222$companies',
+        "HOST": "yadav222.mysql.pythonanywhere-services.com",
+        "USER": "yadav222",
+        "PASSWORD": "databasereal1437@",
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
+    }
+}

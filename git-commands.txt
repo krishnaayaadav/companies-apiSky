@@ -1,0 +1,7 @@
+alias s="git status"
+alias a="git add ."
+alias b="git branch"
+alias ck="git checkout "
+alias c="clear"
+alias l="git --no-pager log"
+alias cmt="git commit -m"

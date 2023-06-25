@@ -6,14 +6,12 @@ def data_insertion(file):
    with open(file=file) as file:
       csv_data = csv.DictReader(file)
       
-      url = 'http://127.0.0.1:8000/api/company/'
+      # url = 'http://127.0.0.1:8000/api/company/'
+      url = 'http://yadav222.pythonanywhere.com/api/companies/'
       
       for comp in csv_data:
          # data insertion from csv file
          typ  = comp['comp_type']
-         types = 1
-         if typ == 'Private':
-            types  = 2
          name = comp['comp_name']
          headq  = comp['comp_headq']
          old  = comp['how_old']
@@ -30,7 +28,7 @@ def data_insertion(file):
             "comp_no_emp": no_emp,
             "comp_review": reviews,
             "open_jobs": "10",
-            "comp_type": types,
+            "comp_type": typ,
             "comp_services": service,
             "comp_desc": desc
          }
@@ -58,9 +56,9 @@ def post_emp_data(file):
 
 
 file = 'companies_list.csv'   
-post_emp_data(file)
+# post_emp_data(file)
 
-# data_insertion(file)
+data_insertion(file)
 
 # data = {
 #    'comp_name': "tcs",
