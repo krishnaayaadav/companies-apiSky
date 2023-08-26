@@ -2,8 +2,8 @@
 from django.contrib import admin
 from django.urls import path,include
 
-from rest_framework.documentation import include_docs_urls
 
+from drf_spectacular.views import SpectacularSwaggerView, SpectacularAPIView
 
 urlpatterns = [
     # admin urls
@@ -13,7 +13,9 @@ urlpatterns = [
     path('api/', include('api_app.api_urls')),
 
     # documentation for api
-    path('', include_docs_urls(title='Companies API'))
+    path('api/schema/', SpectacularAPIView().as_view(), name='schema'),
+    path('api/docs/',   SpectacularSwaggerView().as_view(url_name='schema')),
+
 
 
 ]
