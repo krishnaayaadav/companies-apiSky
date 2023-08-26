@@ -144,3 +144,11 @@ REST_FRAMEWORK = {
 
 }
 
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Companies Restful API',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
